@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W or L</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" script-src='unsafe-inline';>
+    <script src="js/jquery-3.6.0.slim.min.js"></script>
+    <style>
+    
+    h4 {margin: 0px;}
+
+        /* Style the tab */
+    .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    display: inline-block;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+    background-color: #ddd;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    }
+
+    .button-1 {
+    background-image: linear-gradient(to right, #A88BEB, #F8CEEC);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    }
+
+    .button-1:hover{
+    background-position: right center; /* change the direction of the change here */
+    }
+
+    .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.0rem;
+    color: rgb(0, 0, 0);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-top: 5px;}
+
+    .form__field:focus {
+    padding-bottom: 6px;  
+    border-width: 3px;
+    border-image: linear-gradient(to right, #A88BEB, #F8CEEC);
+    border-image-slice: 1;
+    }
+
+    ::-webkit-scrollbar{
+        width: 0.5em;
+    }
+
+    ::-webkit-scrollbar-track{
+        border-radius: 100vw;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom, #A88BEB, #F8CEEC);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+    border-radius: 100px;
+    }
+    </style>
+    <link rel="stylesheet" href="dependencies/all.css">
+</head>
+
+<body style="height: 500px; width: 250px;">
+    <div class="tab">
+        <button id="countingMessagesTab" class="tablinks" style="background-color: #ccc;"><i class="fa-solid fa-calculator fa-lg"></i></button>
+        <button id="deletedMessagesTab" class="tablinks"><i class="fa-solid fa-book-skull fa-lg"></i></button>
+    </div>
+
+    <div id="countingMessages" style="display: block;">
+        <input type="text" id="word1" class="form__field" name="word1" placeholder="Enter a word..." style="color: blue;">
+        <input type="text" id="word2" class="form__field" name="word2" placeholder="Enter another word..." style="color: red;">
+        <button id="startCountingButton" class="button-1" style="margin-left: 26%;"> Start Counting </button>
+        <div>
+            <h4 id="msgRate" style="display: inline-block;"></h4>
+            <p id="messagesPerSecond" style="display: inline-block;"></p>
+        </div>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+
+    <div id="deletedMessages" style="display: none;">
+        <button id="startDeletedMessagesButton" class="button-1" style="margin-left: 20%;"> Deleted Messages </button>
+        <div id="DeletedChatMessages" style="overflow-y:auto; height:400px;">
+        </div>
+    </div>
+    <script src="js/canvasjs.min.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "name": "Chat Companion Dev",
+    "version": "1.0.2",
+    "description": "A companion for Twitch and Youtube Chat. Allows you to count the occurance of words and see moderator deleted chat messages.",
+    "manifest_version": 3,
+    "author": "Usman Jamshed",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Chat Companion"
+    },
+    "icons" : {
+        "16": "icons/favicon-16x16.png",
+        "48": "icons/android-chrome-48x48.png",
+        "128": "icons/android-chrome-128x128.png"
+    },
+    "background": { "service_worker": "js/background.js" },
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "content_scripts": [{
+        "matches": [
+        "http://www.twitch.tv/*", 
+        "https://www.twitch.tv/*",
+        "http://www.youtube.com/*", 
+        "https://www.youtube.com/*"
+        ],
+        "js": ["js/payload.js"]
+    }]
+}
