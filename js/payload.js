@@ -58,7 +58,7 @@ const deletionObserver = new MutationObserver(function (mutations) {
     if (mutation.removedNodes.length > 0){
       var prev_sib = mutation.previousSibling;
       if (prev_sib != null){
-        console.log(mutation);
+        // console.log(mutation);
         var deletedMessage = mutation.removedNodes[0].textContent;
         var deletedCheck = deletedMessage.includes(":");
         // Check on deleted messages
