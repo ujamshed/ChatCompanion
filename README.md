@@ -1,6 +1,6 @@
 # ChatCompanion
 
-Chrome extension to count the occurences of words and find moderator deleted messages.
+Chrome extension to count the occurrences of words and find moderator deleted messages.
 
 ## Preview
 
