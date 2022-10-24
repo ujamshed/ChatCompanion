@@ -55,19 +55,16 @@ const Observer = new MutationObserver(function(mutations) {
 
 const deletionObserver = new MutationObserver(function (mutations) {
   mutations.forEach(function (mutation) {
-
     if (mutation.removedNodes.length > 0){
-
-      if (mutation.removedNodes[0].nodeName === "SPAN"){
-
+      var prev_sib = mutation.previousSibling;
+      if (prev_sib != null){
+        console.log(mutation);
         var deletedMessage = mutation.removedNodes[0].textContent;
-
         var deletedCheck = deletedMessage.includes(":");
-
         // Check on deleted messages
-        if (!deletedCheck){
-          var completeMessage = mutation.target.textContent.split(":")[0] + ": " + deletedMessage;
-          DeletedMessages.push(completeMessage);
+        
+        if (deletedCheck){
+          DeletedMessages.push(deletedMessage);
         };
 
       };
