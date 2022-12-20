@@ -104,7 +104,7 @@ function addObserverIfDesiredNodeAvailable(observerName) {
     var chatBox = element_one.contentWindow.document.querySelectorAll('#items.style-scope.yt-live-chat-item-list-renderer')[0];
   }
   else if(website == "twitch"){
-    var chatBox = document.getElementsByClassName("Layout-sc-nxg1ff-0 aleoz chat-scrollable-area__message-container")[0];
+    var chatBox = document.getElementsByClassName("Layout-sc-1xcs6mc-0 fGCgaq chat-scrollable-area__message-container")[0];
   }
 
   if(!chatBox) {
