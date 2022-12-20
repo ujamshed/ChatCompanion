@@ -9,6 +9,8 @@ Chrome extension to count the occurrences of words and find moderator deleted me
 ## Installation
 [(Back to top)](#table-of-contents)
 
-To use this project, visit the chrome extension store below:
+You can visit the chrome extension store below:
 
 [ChatCompanion](https://chrome.google.com/webstore/detail/chat-companion/gbpihkmljcgdnfgjakblehabicfcfhjd)
+
+Note: The extension is not being actively maintained, and so it may stop working.
